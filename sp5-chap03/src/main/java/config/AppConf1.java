@@ -7,7 +7,7 @@ import spring.MemberDao;
 import spring.MemberPrinter;
 
 @Configuration
-public class AppCtx1 {
+public class AppConf1 {
 
 	@Bean
 	public MemberDao memberDao() {

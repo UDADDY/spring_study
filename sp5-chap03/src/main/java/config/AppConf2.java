@@ -13,7 +13,7 @@ import spring.MemberRegisterService;
 import spring.VersionPrinter;
 
 @Configuration
-public class AppCtx2 {
+public class AppConf2 {
 
 	@Autowired
 	private MemberDao memberDao;
@@ -41,8 +41,8 @@ public class AppCtx2 {
 	@Bean
 	public MemberInfoPrinter infoPrinter() {
 		MemberInfoPrinter infoPrinter = new MemberInfoPrinter();
-		infoPrinter.setMemberDao(memberDao);
-		infoPrinter.setPrinter(memberPrinter);
+//		infoPrinter.setMemberDao(memberDao);
+//		infoPrinter.setPrinter(memberPrinter);
 		return infoPrinter;
 	}
 
