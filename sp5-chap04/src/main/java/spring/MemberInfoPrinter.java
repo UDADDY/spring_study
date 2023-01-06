@@ -1,11 +1,16 @@
 package spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 public class MemberInfoPrinter {
-	@Autowired
+//	이것도 가
+//	@Autowired
+//	private MemberDao memberDao;
+//	@Autowired
+//	private MemberPrinter printer;
+
 	private MemberDao memberDao;
-	@Autowired
 	private MemberPrinter printer;
 
 	public void printMemberInfo(String email) {
@@ -19,12 +24,15 @@ public class MemberInfoPrinter {
 		System.out.println();
 	}
 
-//	public void setMemberDao(MemberDao memberDao) {
-//		this.memberDao = memberDao;
-//	}
-//
-//	public void setPrinter(MemberPrinter printer) {
-//		this.printer = printer;
-//	}
+	@Autowired
+	public void setMemberDao(MemberDao memberDao) {
+		this.memberDao = memberDao;
+	}
+
+	@Autowired
+	@Qualifier("printer")
+	public void setPrinter(MemberPrinter printer) {
+		this.printer = printer;
+	}
 
 }
