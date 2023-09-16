@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.Guestbook.service.GuestbookServiceTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-09-16T15:05:16" hostname="YU" time="0.436">
+  <properties/>
+  <testcase name="testSearch()" classname="com.example.Guestbook.service.GuestbookServiceTests" time="0.436"/>
+  <system-out><![CDATA[00:05:07.873 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+00:05:07.894 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+00:05:07.937 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.example.Guestbook.service.GuestbookServiceTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+00:05:07.955 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.Guestbook.service.GuestbookServiceTests], using SpringBootContextLoader
+00:05:07.960 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.example.Guestbook.service.GuestbookServiceTests]: class path resource [com/example/Guestbook/service/GuestbookServiceTests-context.xml] does not exist
+00:05:07.961 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.example.Guestbook.service.GuestbookServiceTests]: class path resource [com/example/Guestbook/service/GuestbookServiceTestsContext.groovy] does not exist
+00:05:07.961 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.example.Guestbook.service.GuestbookServiceTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+00:05:07.962 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.Guestbook.service.GuestbookServiceTests]: GuestbookServiceTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+00:05:08.034 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.example.Guestbook.service.GuestbookServiceTests]
+00:05:08.151 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\Users\mhy54\OneDrive\바탕 화면\Guestbook\build\classes\java\main\com\example\Guestbook\GuestbookApplication.class]
+00:05:08.154 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.Guestbook.GuestbookApplication for test class com.example.Guestbook.service.GuestbookServiceTests
+00:05:08.340 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.example.Guestbook.service.GuestbookServiceTests]: using defaults.
+00:05:08.341 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+00:05:08.375 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@21fd5faa, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2766ca9d, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@5460cf3a, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@65a15628, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@2e6a5539, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3fc9504b, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6d025197, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@27d4a09, org.springframework.test.context.event.EventPublishingTestExecutionListener@7e4204e2, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@b7c4869, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@740d2e78, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@1c481ff2, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@72437d8d, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@1b955cac, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@676cf48]
+00:05:08.384 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@177bea38 testClass = GuestbookServiceTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@7f132176 testClass = GuestbookServiceTests, locations = '{}', classes = '{class com.example.Guestbook.GuestbookApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@35841320, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6b695b06, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6f01b95f, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@7a5ceedd, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@26abb146, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@4386f16], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.15)
+
+2023-09-17 00:05:09.111  INFO 12576 --- [    Test worker] c.e.G.service.GuestbookServiceTests      : Starting GuestbookServiceTests using Java 1.8.0_202 on Yu with PID 12576 (started by qqq in C:\Users\mhy54\OneDrive\바탕 화면\Guestbook)
+2023-09-17 00:05:09.117  INFO 12576 --- [    Test worker] c.e.G.service.GuestbookServiceTests      : No active profile set, falling back to 1 default profile: "default"
+2023-09-17 00:05:10.409  INFO 12576 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-17 00:05:10.500  INFO 12576 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 78 ms. Found 2 JPA repository interfaces.
+2023-09-17 00:05:11.378  INFO 12576 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-17 00:05:11.516  INFO 12576 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-09-17 00:05:11.765  INFO 12576 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-09-17 00:05:11.961  INFO 12576 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-17 00:05:12.907  INFO 12576 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-17 00:05:12.958  INFO 12576 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-09-17 00:05:13.958  INFO 12576 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-17 00:05:13.981  INFO 12576 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-17 00:05:15.084  WARN 12576 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-17 00:05:16.230  INFO 12576 --- [    Test worker] c.e.G.service.GuestbookServiceTests      : Started GuestbookServiceTests in 7.758 seconds (JVM running for 10.015)
+Hibernate: select guestbook0_.gno as gno1_0_, guestbook0_.moddate as moddate2_0_, guestbook0_.regdate as regdate3_0_, guestbook0_.content as content4_0_, guestbook0_.title as title5_0_, guestbook0_.writer as writer6_0_ from guestbook guestbook0_ where guestbook0_.gno>? and (guestbook0_.title like ? escape '!' or guestbook0_.content like ? escape '!') order by guestbook0_.gno desc limit ?
+Hibernate: select count(guestbook0_.gno) as col_0_0_ from guestbook guestbook0_ where guestbook0_.gno>? and (guestbook0_.title like ? escape '!' or guestbook0_.content like ? escape '!')
+PREV: false
+NEXT: true
+TOTAL: 14
+-------------------------------------
+GuestbookDTO(gno=305, title=555, content=12331233123, writer=123, regDate=null, modDate=null)
+GuestbookDTO(gno=299, title=Title....299, content=Content....299, writer=user9, regDate=null, modDate=null)
+GuestbookDTO(gno=298, title=Title....298, content=Content....298, writer=user8, regDate=null, modDate=null)
+GuestbookDTO(gno=297, title=Title....297, content=Content....297, writer=user7, regDate=null, modDate=null)
+GuestbookDTO(gno=296, title=Title....296, content=Content....296, writer=user6, regDate=null, modDate=null)
+GuestbookDTO(gno=295, title=Title....295, content=Content....295, writer=user5, regDate=null, modDate=null)
+GuestbookDTO(gno=294, title=Title....294, content=Content....294, writer=user4, regDate=null, modDate=null)
+GuestbookDTO(gno=293, title=Title....293, content=Content....293, writer=user3, regDate=null, modDate=null)
+GuestbookDTO(gno=292, title=Title....292, content=Content....292, writer=user2, regDate=null, modDate=null)
+GuestbookDTO(gno=291, title=Title....291, content=Content....291, writer=user1, regDate=null, modDate=null)
+------------------------------------
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
