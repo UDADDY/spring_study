@@ -23,8 +23,8 @@ public class BoardRepositoryTests {
     private BoardRepository boardRepository;
 
     @Test
-    public void insertBoards(){
-        IntStream.rangeClosed(1,100).forEach(i -> {
+    public void insertBoards() {
+        IntStream.rangeClosed(1, 100).forEach(i -> {
             Member member = Member.builder().email("user" + i + "@aaa.com").build();
 
             Board board = Board.builder()
@@ -39,7 +39,7 @@ public class BoardRepositoryTests {
 
     @Transactional
     @Test
-    public void testRead1(){
+    public void testRead1() {
         Optional<Board> result = boardRepository.findById(100L);
 
         Board board = result.get();
@@ -49,7 +49,7 @@ public class BoardRepositoryTests {
     }
 
     @Test
-    public void testReadWithWriter(){
+    public void testReadWithWriter() {
         Object result = boardRepository.getBoardWithWriter(100L);
 
         Object[] arr = (Object[]) result;
@@ -59,16 +59,16 @@ public class BoardRepositoryTests {
     }
 
     @Test
-    public void testGetBoardWithReply(){
+    public void testGetBoardWithReply() {
         List<Object[]> result = boardRepository.getBoardWithReply(100L);
 
-        for(Object[] arr : result){
+        for (Object[] arr : result) {
             System.out.println(Arrays.toString(arr));
         }
     }
 
     @Test
-    public void testWithReplyCount(){
+    public void testWithReplyCount() {
         Pageable pageable = PageRequest.of(0, 10, Sort.by("bno").descending());
 
         Page<Object[]> result = boardRepository.getBoardWithReplyCount(pageable);
@@ -81,10 +81,23 @@ public class BoardRepositoryTests {
     }
 
     @Test
-    public void testRead3(){
+    public void testRead3() {
         Object result = boardRepository.getBoardByBno(100L);
 
         Object[] arr = (Object[]) result;
         System.out.println(Arrays.toString(arr));
     }
+
+    @Test
+    public void testSearch1() {
+        boardRepository.search1();
+    }
+
+    @Test
+    public void testSearchPage() {
+        Pageable pageable = PageRequest.of(0, 10, Sort.by("bno").descending().and(Sort.by("title").ascending()));
+
+        Page<Object[]> result = boardRepository.searchPage("t", "1", pageable);
+    }
+
 }
