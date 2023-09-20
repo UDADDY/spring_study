@@ -14,13 +14,14 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import javax.xml.crypto.dsig.keyinfo.PGPData;
 import java.util.Optional;
 import java.util.function.Function;
 
 @Service
 @RequiredArgsConstructor
 @Log4j2
-public class BoardServiceImpl implements BoardService{
+public class BoardServiceImpl implements BoardService {
 
     private final BoardRepository boardRepository;
     private final ReplyRepository replyRepository;
@@ -40,9 +41,15 @@ public class BoardServiceImpl implements BoardService{
     public PageResultDTO<BoardDTO, Object[]> getList(PageRequestDTO pageRequestDTO) {
         log.info(pageRequestDTO);
 
-        Function<Object[], BoardDTO> fn = (en -> entityToDTO((Board)en[0], (Member) en[1], (Long) en[2]));
+        Function<Object[], BoardDTO> fn = (en -> entityToDTO((Board) en[0], (Member) en[1], (Long) en[2]));
 
-        Page<Object[]> result = boardRepository.getBoardWithReplyCount(pageRequestDTO.getPageable(Sort.by("bno").descending()));
+//        Page<Object[]> result = boardRepository.getBoardWithReplyCount(pageRequestDTO.getPageable(Sort.by("bno").descending()));
+
+        Page<Object[]> result = boardRepository.searchPage(
+                pageRequestDTO.getType(),
+                pageRequestDTO.getKeyword(),
+                pageRequestDTO.getPageable(Sort.by("bno").descending())
+        );
 
         return new PageResultDTO<>(result, fn);
     }
@@ -66,7 +73,7 @@ public class BoardServiceImpl implements BoardService{
 
     @Transactional
     @Override
-    public void modify(BoardDTO boardDTO){
+    public void modify(BoardDTO boardDTO) {
         Board board = boardRepository.getReferenceById(boardDTO.getBno());
 
         board.changeTitle(boardDTO.getTitle());
