@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
 import java.util.stream.IntStream;
 
 @SpringBootTest
@@ -15,9 +16,9 @@ public class ReplyRepositoryTests {
     private ReplyRepository replyRepository;
 
     @Test
-    public void insertReplies(){
+    public void insertReplies() {
         IntStream.rangeClosed(1, 300).forEach(i -> {
-            long bno = (long)(Math.random() * 100) + 1;
+            long bno = (long) (Math.random() * 100) + 1;
 
             Board board = Board.builder().bno(bno).build();
 
@@ -30,5 +31,12 @@ public class ReplyRepositoryTests {
             replyRepository.save(reply);
         });
 
+    }
+
+    @Test
+    public void testListByBoard() {
+        List<Reply> replyList = replyRepository.getRepliesByBoardOrderByRno(Board.builder().bno(97L).build());
+
+        replyList.forEach(reply -> System.out.println(reply));
     }
 }
