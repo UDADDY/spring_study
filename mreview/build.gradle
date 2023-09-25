@@ -82,10 +82,6 @@ dependencies {
     // DB
     runtimeOnly 'com.mysql:mysql-connector-j'
 
-    // Thymeleaf
-    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-
-//    compile group: 'net.coobird', name: 'thumbnailator', version: '0.4.12'
     implementation group: 'net.coobird', name: 'thumbnailator', version: '0.4.8'
 }
 
