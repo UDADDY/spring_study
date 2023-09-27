@@ -1,7 +1,9 @@
 package com.example.club.controller;
 
+import com.example.club.security.dto.ClubAuthMemberDTO;
 import lombok.extern.java.Log;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,17 +14,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class SampleController {
 
     @GetMapping("/all")
-    public void exAll(){
+    public void exAll() {
         log.info("exAll.....");
     }
 
     @GetMapping("/member")
-    public void exMember(){
+    public void exMember(@AuthenticationPrincipal ClubAuthMemberDTO clubAuthMemberDTO) {
         log.info("exMember.....");
+        log.info("------------------------------");
+
+        log.info(clubAuthMemberDTO);
     }
 
     @GetMapping("/admin")
-    public void exAdmin(){
+    public void exAdmin() {
         log.info("exAdmin.....");
     }
 
