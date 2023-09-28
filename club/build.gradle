@@ -38,7 +38,11 @@ dependencies {
     // DB
     runtimeOnly 'com.mysql:mysql-connector-j'
 
+    // Security
     implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+
+    // OAuth, Google Social Login
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
 }
 
 tasks.named('test') {
