@@ -1,7 +1,9 @@
 package com.example.club.config;
 
 import com.example.club.security.handler.ClubLoginSuccessHandler;
+import com.example.club.security.service.ClubUserDetailsService;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -13,6 +15,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 @Log4j2
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    @Autowired
+    private ClubUserDetailsService userDetailsService;
 
     @Bean
     PasswordEncoder passwordEncoder() {
@@ -35,5 +40,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.logout();
 
         http.oauth2Login().successHandler(successHandler());
+        http.rememberMe().tokenValiditySeconds(60 * 60 * 24 * 7).userDetailsService(userDetailsService);
     }
 }
